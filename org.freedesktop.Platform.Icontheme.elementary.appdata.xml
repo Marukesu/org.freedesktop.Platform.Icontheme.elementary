@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyrighty 2017 elementary, LLC <contact@elementary.io> -->
+<component type="runtime">
+  <id>org.freedesktop.Platform.Icontheme.elementary</id>
+  <metadata_license>CC0-1/0</metadata_license>
+  <project_group>elementary</project_group>
+  <project_license>GPL-3.0+</project_license>
+  <name>elementary Icons</name>
+  <summary>Named,vector icons for elementary OS.</summary>
+  <description>
+    <p>
+      An original set of vectors icons designed specifically for elementary OS and its desktop environment: Pantheon.
+    </p>
+  </description>
+  <developer_name>elementary LLC.</developer_name>
+  <url type="homepage">https://github.com/elementary/icons</url>
+  <url type="bugtracker">https://github.com/elementary/icons/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <update_contact>contact_AT_elementary.io</update_contact>
+</component>

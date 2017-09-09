@@ -1,0 +1,47 @@
+{
+  "id":"org.freedesktop.Platform.Icontheme.elementary",
+  "branch": "master",
+  "runtime": "org.freedesktop.Sdk",
+  "build-extension": true,
+  "sdk": "org.freedesktop.Sdk",
+  "runtime-version": "1.6",
+  "sdk-extensions": [],
+  "separate-locales": false,
+  "cleanup": [ "/sahre/info", "/share/man" ],
+  "appstream-compose": false,
+  "build-options" : {
+    "cflags": "-02",
+    "cxxflags": "-02",
+    "prefix": "/usr/share/runtime"
+  },
+  "modules": [
+    {
+      "name": "elementary",
+      "buildsystem": "cmake",
+      "config-opts": ["-DCMAKE_INSTALL_LIBDIR=lib"],
+      "builddir": true,
+      "sources": [
+        {
+          "type": "git",
+          "url": "git://github.com/elementary/icons.git",
+          "branch": "master"
+        }
+      ]
+    },
+    {
+      "name": "appdata",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p ${FLATPAK_DEST}/share/appdata",
+        "cp org.freedesktop.Platform.Icontheme.elementary.appdata.xml ${FLATPAK_DEST}/share/appdata",
+        "appstream-compose --basename=org.freedesktop.Platform.Icontheme.elementary --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Platform.Icontheme.elementary"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "org.freedesktop.Platform.Icontheme.elementary.appdata.xml"
+        }
+      ]
+    }
+  ]
+}
